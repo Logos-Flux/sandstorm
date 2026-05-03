@@ -1,0 +1,23 @@
+[Unit]
+Description=Sandstorm MCP server (FastMCP)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dev
+Group=dev
+WorkingDirectory=/home/dev/sandstorm/server
+EnvironmentFile=/etc/sandstorm-mcp.env
+ExecStart=/home/dev/.local/bin/uv run --project /home/dev/sandstorm/server python -m sandstorm_mcp.main
+Restart=on-failure
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+
+# Light hardening — don't over-lock since this server intentionally does fs/bash ops
+NoNewPrivileges=true
+PrivateTmp=false
+
+[Install]
+WantedBy=multi-user.target

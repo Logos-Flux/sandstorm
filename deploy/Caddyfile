@@ -1,0 +1,17 @@
+# Replace SANDSTORM_DOMAIN with your public hostname (Caddy will provision Let's Encrypt automatically).
+SANDSTORM_DOMAIN {
+    encode zstd gzip
+    reverse_proxy localhost:8080 {
+        transport http {
+            read_timeout 300s
+            write_timeout 300s
+            dial_timeout 5s
+        }
+        # Pass through streaming responses (SSE / streamable-http) without buffering
+        flush_interval -1
+    }
+    log {
+        output file /var/log/caddy/sandstorm-mcp.log
+        format json
+    }
+}

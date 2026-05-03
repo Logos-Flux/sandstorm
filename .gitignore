@@ -1,0 +1,35 @@
+# Node
+node_modules/
+.wrangler/
+.dev.vars
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Editors
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Logs / runtime
+*.log
+*.sqlite
+*.db
+
+# Internal-only docs (not meant for public)
+RELEASE_CHECKLIST*.md
