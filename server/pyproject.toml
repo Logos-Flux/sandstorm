@@ -11,7 +11,7 @@ authors = [
 ]
 dependencies = [
     "fastmcp>=2.11.0",
-    "starlette>=0.40.0",
+    "starlette>=1.0.1",
     "uvicorn[standard]>=0.32.0",
     "aiosqlite>=0.20.0",
 ]
