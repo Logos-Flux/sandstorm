@@ -5,6 +5,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python: 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
 [![Status: alpha](https://img.shields.io/badge/Status-alpha-orange.svg)](#status)
+[![CI](https://github.com/Logos-Flux/sandstorm/actions/workflows/ci.yml/badge.svg)](https://github.com/Logos-Flux/sandstorm/actions/workflows/ci.yml)
 
 ## Why
 
@@ -74,6 +75,8 @@ systemd via `EnvironmentFile`.
 | `SANDSTORM_STATE_DIR` | no | `/home/dev/.sandstorm-mcp` | SQLite session DB location. |
 | `MAX_INSTANCES` | no | `5` | Reported via `/health`. |
 | `SESSION_AUTH_TOKEN` | no | — | If set, `/session/*` requires this bearer. |
+| `SANDSTORM_LOG_LEVEL` | no | `INFO` | Log level. |
+| `MCP_AUTH_TOKEN` | no | — | Fallback for `SANDSTORM_MCP_TOKEN`. |
 
 ## Tool surface
 
